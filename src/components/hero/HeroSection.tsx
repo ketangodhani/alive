@@ -1,5 +1,6 @@
 import FeaturedCard from "../cards/FeaturedCard";
 import SideCard from "../cards/SideCard";
+import FadeIn from "../ui/FadeIn";
 
 interface Props {
   articles: any[];
@@ -16,14 +17,16 @@ export default function HeroSection({ articles }: Props) {
   const sideNews = articles.slice(1, 5);
 
   return (
-    <section className="grid gap-6 lg:grid-cols-[2fr_1fr]">
-      {featured && <FeaturedCard article={featured} />}
+    <FadeIn>
+      <section className="grid gap-6 lg:grid-cols-[2fr_1fr]">
+        {featured && <FeaturedCard article={featured} />}
 
-      <div className="flex flex-col gap-4">
-        {sideNews.map((article, index) => (
-          <SideCard key={index} article={article} />
-        ))}
-      </div>
-    </section>
+        <div className="flex flex-col gap-4">
+          {sideNews.map((article, index) => (
+            <SideCard key={index} article={article} />
+          ))}
+        </div>
+      </section>
+    </FadeIn>
   );
 }

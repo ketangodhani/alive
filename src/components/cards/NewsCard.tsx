@@ -10,7 +10,7 @@ export default function NewsCard({ article }: Props) {
   const slug = slugify(article.title);
   return (
     <Link href={`/article/${slug}`}>
-      <article className="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 transition hover:border-zinc-700">
+      <article className="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 transition duration-300 hover:-translate-y-2 hover:border-zinc-700">
         <div className="relative h-56 overflow-hidden">
           <Image
             src={article?.urlToImage || "/fallback.jpg"}
