@@ -16,6 +16,7 @@ export default function NewsCard({ article }: Props) {
             src={article?.urlToImage || "/fallback.jpg"}
             alt={article?.title || "news"}
             fill
+            unoptimized
             className="object-cover transition duration-500 group-hover:scale-105"
           />
         </div>

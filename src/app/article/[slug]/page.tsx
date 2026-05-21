@@ -1,8 +1,26 @@
 import Navbar from "@/components/layout/Navbar";
+import { Metadata } from "next";
 
 interface Props {
   params: {
     slug: string;
+  };
+}
+
+interface MetadataProps {
+  params: {
+    slug?: string;
+  };
+}
+
+export async function generateMetadata({
+  params,
+}: MetadataProps): Promise<Metadata> {
+  const title = params?.slug?.replaceAll("-", " ") || "Article";
+
+  return {
+    title: `${title} | ALIVE NEWS`,
+    description: "Read the latest editorial news article on ALIVE NEWS.",
   };
 }
 
