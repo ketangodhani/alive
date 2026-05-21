@@ -1,11 +1,13 @@
 import Link from "next/link";
+import SearchBar from "./SearchBar";
 
 const menuItems = [
-  "Technology",
-  "Business",
-  "India",
-  "World",
-  "Sports",
+   "technology",
+  "business",
+  "sports",
+  "science",
+  "entertainment",
+  "health",
 ];
 
 export default function Navbar() {
@@ -27,14 +29,12 @@ export default function Navbar() {
               href={`/category/${item.toLowerCase()}`}
               className="text-sm uppercase tracking-wide text-zinc-300 hover:text-white transition"
             >
-              {item}
+              {item.charAt(0).toUpperCase() + item.slice(1)}
             </Link>
           ))}
         </nav>
 
-        <button className="text-zinc-300 hover:text-white">
-          Search
-        </button>
+        <SearchBar />
       </div>
     </header>
   );
