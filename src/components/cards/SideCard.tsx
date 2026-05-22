@@ -6,7 +6,7 @@ interface Props {
 
 export default function SideCard({ article }: Props) {
   return (
-    <article className="group flex gap-4 border-b border-zinc-800 pb-4">
+    <article className="group flex gap-4 border-b border-zinc-200 dark:border-zinc-800 pb-4">
       
       <div className="relative h-24 w-32 overflow-hidden rounded-xl">
         <Image
@@ -18,7 +18,7 @@ export default function SideCard({ article }: Props) {
       </div>
 
       <div className="flex-1">
-        <h3 className="line-clamp-3 text-sm font-semibold leading-snug text-zinc-100">
+        <h3 className="line-clamp-3 text-sm font-semibold leading-snug text-zinc-800 dark:text-zinc-100">
           {article?.title}
         </h3>
 
